@@ -18,8 +18,6 @@
         color: white;
         padding: 11px;
         text-align: center;
-        font-size: 0px;
-        font-weight: bold;
       }
       .logo {
         width: 200px;
@@ -42,17 +40,18 @@
         background: rgb(0, 167, 0);
       }
       .container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
         justify-content: center;
         padding: 20px;
       }
       .game {
         background: white;
         padding: 15px;
-        margin: 10px;
         text-align: center;
         width: 200px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
       }
       .game img {
         width: 200px;
@@ -73,7 +72,7 @@
   </head>
   <body>
     <header>
-      <img class="logo" src=/images/BrainyMath.png>
+      <img class="logo" src="/images/BrainyMath.png">
     </header>
     <nav>
       <a href="/">Home</a>
@@ -84,39 +83,23 @@
     <div class="container">
       <div class="game">
         <img src="/images/2048.png" alt="2048" />
-
         <h3>2048</h3>
         <a href="/games/2048.html">Play Now</a>
       </div>
       <div class="game">
-        <img
-          src="/images/DriftBoss.png"
-          alt="Drift Boss"
-        />
+        <img src="/images/DriftBoss.png" alt="Drift Boss" />
         <h3>Drift Boss</h3>
         <a href="/games/driftboss.html">Play Now</a>
       </div>
       <div class="game">
-        <img
-          src="/images/SuikaGame.png"
-          alt="Suika Game"
-        />
+        <img src="/images/SuikaGame.png" alt="Suika Game" />
         <h3>Suika Game</h3>
         <a href="/games/suikagame.html">Play Now</a>
-        <div class="game">
-        <img
-          src="/images/FourColours.png"
-          alt="Four Colours"
-        />
+      </div>
+      <div class="game">
+        <img src="/images/FourColours.png" alt="Four Colours" />
         <h3>Four Colours</h3>
         <a href="/games/fourcolours.html">Play Now</a>
-        <div class="game">
-        <img
-          src=""
-          alt=""
-        />
-        <h3>More Games Coming Soon...</h3>
-        <a href="">Check back soon!</a>
       </div>
     </div>
   </body>

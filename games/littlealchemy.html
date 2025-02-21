@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>BrainyMath | Play Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        text-align: center;
+      }
+      header {
+        background: green;
+        color: white;
+        padding: 11px;
+        text-align: center;
+        font-size: 0px;
+        font-weight: bold;
+      }
+      .logo {
+        width: 200px;
+      }
+      nav {
+        display: flex;
+        background: darkgreen;
+        padding: 10px;
+        justify-content: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 5px 10px;
+        margin: 0 5px;
+        background: rgb(0, 143, 0);
+      }
+      nav a:hover {
+        background: rgb(0, 167, 0);
+      }
+      .game-container {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+      }
+      .game-info {
+        margin-top: 10px;
+      }
+      button {
+        background: rgb(0, 143, 0);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: rgb(0, 167, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="/images/BrainyMath.png" />
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/mathgames.html">Math Games</a>
+      <a href="/logicgames.html">Logic Games</a>
+      <a href="/strategygames.html">Strategy Games</a>
+    </nav>
+    <div class="game-container">
+      <h2 id="game-title">Little Alchemy</h2>
+      <iframe
+        id="game-frame"
+        src="https://littlealchemy.com/"
+        allowfullscreen
+      ></iframe>
+       <h4>About Little Alchemy</h4>
+      <p class="game-info" id="game-description">
+       Mix items and create the world from scratch! Discover interesting items accompanied by funny descriptions and lose yourself exploring the huge, exciting library! Uncover strategies for creating new and fascinating combinations. Lose yourself in a world of creativity and discovery!
+      </p>
+      <button onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
+    <script>
+      function toggleFullscreen() {
+        let iframe = document.getElementById("game-frame");
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      }
+    </script>
+  </body>
+</html>

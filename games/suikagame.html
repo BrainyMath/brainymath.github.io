@@ -56,32 +56,6 @@
       }
       .game-info {
         margin-top: 10px;
-      }
-      button {
-        background: rgb(0, 143, 0);
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        margin-top: 10px;
-      }
-      button:hover {
-        background: rgb(0, 167, 0);
-      }
-      .theme-toggle {
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    cursor: pointer;
-  }
-  body.dark-mode {
-    background-color: #111;
-    color: #fff;
-  }
-  .theme-icon {
-    width: 32px;
-    height: 32px;
-  }
     </style>
   </head>
   <body>
@@ -94,9 +68,7 @@
       <a href="/logicgames.html">Logic Games</a>
       <a href="/strategygames.html">Strategy Games</a>
     </nav>
-    <div class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
-  <img id="theme-icon" class="theme-icon" src="https://cdn-icons-png.flaticon.com/512/831/831682.png" alt="moon icon">
-</div>
+  
 
     <div class="game-container">
       <h2 id="game-title">Suika Game</h2>
@@ -113,45 +85,6 @@
       <button onclick="toggleFullscreen()">Fullscreen</button>
     </div>
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = getCookie("theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      updateIcon("sun");
-    }
-  });
-
-  function toggleTheme() {
-    const body = document.body;
-
-    if (body.classList.toggle("dark-mode")) {
-      updateIcon("sun");
-      setCookie("theme", "dark", 365);
-    } else {
-      updateIcon("moon");
-      setCookie("theme", "light", 365);
-    }
-  }
-
-  function updateIcon(mode) {
-    const icon = document.getElementById("theme-icon");
-    if (mode === "sun") {
-      icon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png"; // Sun icon
-      icon.alt = "sun icon";
-    } else {
-      icon.src = "https://cdn-icons-png.flaticon.com/512/831/831682.png"; // Moon icon
-      icon.alt = "moon icon";
-    }
-  }
-
-  function setCookie(name, value, days) {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-  }
-
-  function getCookie(name) {
-    return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
-  }
       function toggleFullscreen() {
         let iframe = document.getElementById("game-frame");
         if (iframe.requestFullscreen) {
